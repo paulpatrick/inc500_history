@@ -35,7 +35,7 @@ for group in batch:
            desc = d[0].text_content()
            for cd in co_root.cssselect("div.inc5000companydata p"):
               t=cd.text_content()
-              if t.find("2009 Rev") != -1:
+              if t.find("2010 Rev") != -1:
                   base_revst = t.rsplit(":")[1] 
                   base_revst = base_revst.lstrip("$")
                   base_revst = base_revst.replace(",", "")
@@ -44,7 +44,7 @@ for group in batch:
                       base_rev = int(float(base_revst)*1000000.0)
                   elif base_revst.find("billion") != -1:
                       base_revst = base_revst.rstrip("billion")
-                      print "2009 ", base_revst
+                      print "2010 ", base_revst
                       base_rev = int(float(base_revst)*1000000000.0)
                   else :
                       base_rev = int(base_revst)
@@ -74,7 +74,7 @@ for group in batch:
                 curr_revst = curr_revst.rstrip("million")
                 curr_rev = int(float(curr_revst)*1000000.0)
             elif curr_revst.find("billion") != -1:
-                print "2012 ", curr_revst
+                print "2013 ", curr_revst
                 curr_revst = curr_revst.rstrip("billion")
                 curr_rev = int(float(curr_revst)*1000000000.0)
             else:
